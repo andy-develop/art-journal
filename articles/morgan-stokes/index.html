@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2M2 Art Direction Co., — art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #FFFFFF;
+    --ink: #0A0A0A;
+    --ink-2: #555555;
+    --ink-3: #999999;
+    --accent: #FF4D00;
+    --line: #E5E5E5;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .header {
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav a:hover { color: var(--accent); }
+  .article-header {
+    padding: 4rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .article-cat {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .article-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .article-meta {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .article-hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+  .article-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+  }
+  .article-content p {
+    margin-bottom: 1.5rem;
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .article-content img {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  .article-nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+  }
+  .article-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  .article-nav a:hover { color: var(--accent); }
+  footer {
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 900px) {
+    .header { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+    .nav { display: none; }
+    .topbar { padding: 0.5rem 1.5rem; }
+    .article-header { padding: 2rem 1.5rem; }
+    .article-content { padding: 2rem 1.5rem; }
+    .article-nav { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Independent Journal</span>
+  <span>Design · Art · Culture</span>
+  <span>Est. 2017</span>
+</div>
+
+<header class="header">
+  <a href="../../index.html" class="logo">art/</a>
+  <ul class="nav">
+    <li><a href="../../#design">Design</a></li>
+    <li><a href="../../#art">Art</a></li>
+    <li><a href="../../#fashion">Fashion</a></li>
+    <li><a href="../../#photo">Photography</a></li>
+    <li><a href="../../#music">Music</a></li>
+  </ul>
+  <a href="../../index.html" style="font-size: 0.75rem; color: var(--ink-2); text-decoration: none;">← Back</a>
+</header>
+
+<article>
+  <header class="article-header">
+    <span class="article-cat">ARCHITECTURE</span>
+    <h1 class="article-title">2M2 Art Direction Co.,</h1>
+    <div class="article-meta">
+      <span>7月 27, 2025</span>
+    </div>
+  </header>
+
+  <div class="article-hero">
+    <img src="http://www.maltm.com/content/media/2021/08/ignant-art-morgan-stokes-016-1440x1440.jpg" alt="2M2 Art Direction Co.,">
+  </div>
+
+  <div class="article-content">
+    <p>这是一篇关于设计、艺术与文化的深度文章。更多内容正在整理中。</p>
+  </div>
+
+  <nav class="article-nav">
+    <a href="../../index.html">← All Stories</a>
+    <a href="#">Next Story →</a>
+  </nav>
+</article>
+
+<footer>
+  © 2025 art journal · Design · Art · Culture
+</footer>
+
+</body>
+</html>
