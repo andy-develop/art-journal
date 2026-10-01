@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>art — 设计 · 艺术 · 文化</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FFFFFF;
+    --ink: #0A0A0A;
+    --ink-2: #555555;
+    --ink-3: #999999;
+    --accent: #FF4D00;
+    --line: #E5E5E5;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top Bar */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+
+  /* Header */
+  .header {
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav a:hover { color: var(--accent); }
+
+  .search-btn {
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
+  /* Hero - Full width split */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+    min-height: 70vh;
+  }
+
+  .hero-text {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    width: fit-content;
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-image {
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Section Header */
+  .section-head {
+    padding: 3rem 3rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-head h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .section-head span {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+  }
+
+  /* Cards Grid - 3 col */
+  .cards {
+    padding: 0 3rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #f0f0f0;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover .card-img img {
+    transform: scale(1.05);
+  }
+
+  .card-cat {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .card-date {
+    font-size: 0.7rem;
+    color: var(--ink-3);
+  }
+
+  /* Category strip */
+  .cat-strip {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 3rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+  }
+
+  .cat-strip a {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .cat-strip a:hover { color: var(--accent); }
+
+  /* About section */
+  .about {
+    padding: 6rem 3rem;
+    max-width: 800px;
+  }
+
+  .about h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .about p {
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .header { grid-template-columns: 1fr auto; padding: 1.5rem; }
+    .topbar { padding: 0.5rem 1.5rem; }
+    .hero-text { padding: 2rem 1.5rem; }
+    .section-head { padding: 2rem 1.5rem 1rem; }
+    .cards { padding: 0 1.5rem 2rem; }
+    .cat-strip { padding: 1rem 1.5rem; }
+    .about { padding: 3rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Independent Journal</span>
+  <span>Design · Art · Culture</span>
+  <span>Est. 2017</span>
+</div>
+
+<header class="header">
+  <div class="logo">art/</div>
+  <ul class="nav">
+    <li><a href="#design">Design</a></li>
+    <li><a href="#art">Art</a></li>
+    <li><a href="#fashion">Fashion</a></li>
+    <li><a href="#photo">Photography</a></li>
+    <li><a href="#music">Music</a></li>
+  </ul>
+  <div class="search-btn">Search →</div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <div>
+      <span class="hero-tag">Featured</span>
+      <h1>Lake Ripple：咖啡与艺术沉浸的静默体验</h1>
+      <p class="hero-desc">Atelier 2M2 新作，一座融合咖啡、展览与冥想空间的复合建筑。以「洞穴寓言」为概念，在喧嚣城市中构建一处向内的静谧场域。</p>
+    </div>
+    <div class="hero-meta">
+      <span>Architecture</span>
+      <span>Interior</span>
+      <span>2025.07.27</span>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/media/2025/07/Lake_Ripple_Spatial_Design_Atelier_2M2_016.webp" alt="Lake Ripple">
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>Latest Stories</h2>
+  <span>View all →</span>
+</div>
+
+<section class="cards">
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2025/07/Lake_Ripple_Spatial_Design_Atelier_2M2_020.webp" alt="Office">
+    </div>
+    <div class="card-cat">Interior</div>
+    <h3 class="card-title">The Poetics of Order 秩序的诗学</h3>
+    <div class="card-date">2025.07.01</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2021/09/david-telerman-construction-arizona-3-x1280-q90.jpg" alt="Sculpture">
+    </div>
+    <div class="card-cat">Sculpture</div>
+    <h3 class="card-title">David Telerman：亚利桑那的建造</h3>
+    <div class="card-date">2021.09.12</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2020/05/Ballet-Dancer_maltm_com-21.jpg" alt="Photography">
+    </div>
+    <div class="card-cat">Photography</div>
+    <h3 class="card-title">芭蕾舞者的瞬间凝固</h3>
+    <div class="card-date">2020.05.08</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2025/07/asylum-steampunk-festival-lincoln-100.webp" alt="Culture">
+    </div>
+    <div class="card-cat">Culture</div>
+    <h3 class="card-title">Steampunk Festival：林肯的复古未来</h3>
+    <div class="card-date">2025.07.15</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2019/06/Wardrobe-Snacks-316.jpg" alt="Fashion">
+    </div>
+    <div class="card-cat">Fashion</div>
+    <h3 class="card-title">日常着装的美学研究</h3>
+    <div class="card-date">2019.06.20</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="card-img">
+      <img src="assets/media/2019/08/444444-02.jpg" alt="Art">
+    </div>
+    <div class="card-cat">Art</div>
+    <h3 class="card-title">当代艺术中的物质性探索</h3>
+    <div class="card-date">2019.08.14</div>
+  </a>
+</section>
+
+<div class="cat-strip">
+  <a href="#">Architecture</a>
+  <a href="#">Interior</a>
+  <a href="#">Sculpture</a>
+  <a href="#">Photography</a>
+  <a href="#">Fashion</a>
+  <a href="#">Design</a>
+  <a href="#">Music</a>
+  <a href="#">Publishing</a>
+</div>
+
+<section class="about">
+  <h2>About</h2>
+  <p>这是一份独立的设计与文化出版物，关注建筑、艺术、时尚、摄影与音乐领域的当代实践。我们相信设计是一种观看世界的方式——通过空间、物体与图像，重新建立人与环境的感知连接。</p>
+  <p>自 2017 年创立以来，我们持续记录全球范围内有思考的设计实践，从东京到哥本哈根，从上海到纽约。</p>
+</section>
+
+<footer>
+  <span>© 2025 art journal</span>
+  <span>About · Contact · Instagram</span>
+</footer>
+
+</body>
+</html>
